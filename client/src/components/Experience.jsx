@@ -1,16 +1,13 @@
-import {
-  ContactShadows,
-  Environment,
-  OrbitControls,
-  useCursor,
-} from "@react-three/drei";
-import { AnimatedWoman } from "./AnimatedWoman";
+import { OrbitControls } from "@react-three/drei";
 
 export const Experience = () => {
   return (
     <>
       <OrbitControls />
-      <AnimatedWoman />
+      <mesh>
+        <boxGeometry />
+        <meshNormalMaterial />
+      </mesh>
     </>
   );
 };
