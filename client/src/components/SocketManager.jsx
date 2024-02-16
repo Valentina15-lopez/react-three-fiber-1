@@ -3,10 +3,10 @@ import { useEffect } from "react";
 import { io } from "socket.io-client";
 
 export const socket = io("http://localhost:3001");
-export const charactersAtom = atom([]);
+export const avatarAtom = atom([]);
 
 export const SocketManager = () => {
-  const [_characters, setCharacters] = useAtom(charactersAtom);
+  const [avatar, setAvatar] = useAtom(avatarAtom);
   useEffect(() => {
     function onConnect() {
       console.log("connected");
@@ -20,7 +20,7 @@ export const SocketManager = () => {
     }
 
     function onCharacters(value) {
-      setCharacters(value);
+      setAvatar(value);
     }
 
     socket.on("connect", onConnect);
